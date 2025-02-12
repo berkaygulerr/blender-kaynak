@@ -76,3 +76,11 @@
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
   }
 }
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  line-height: 1.2;
+  padding-bottom: 0.15em; /* Harf alt kesimlerini dengelemek için */
+}

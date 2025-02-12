@@ -188,7 +188,7 @@ export default function Home() {
   return (
     <main className="container mx-auto px-4 py-12">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-center mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-center mx-auto pb-4">
           Blender Kaynakları
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
