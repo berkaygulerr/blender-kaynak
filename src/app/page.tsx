@@ -2,13 +2,19 @@
 
 import { Shortcuts } from "@/components/shortcuts";
 import { youtubeChannels } from "@/data/youtube-channels";
+import type { YouTubeChannel } from "@/data/youtube-channels";
 import { textureSites } from "@/data/texture-sites";
+import type { TextureSite } from "@/data/texture-sites";
 import { assetSites } from "@/data/asset-sites";
+import type { AssetSite } from "@/data/asset-sites";
 import { editPackages } from "@/data/edit-packages";
+import type { EditPackage } from "@/data/edit-packages";
 import { referencePoses } from "@/data/reference-poses";
+import type { ReferencePose } from "@/data/reference-poses";
 import { inspirationSites } from "@/data/inspiration-sites";
+import type { InspirationSite } from "@/data/inspiration-sites";
 import { shortcuts } from "@/data/shortcuts";
-import { fontResources } from "@/data/font-resources";
+import { FontResource, fontResources } from "@/data/font-resources";
 import { useState } from 'react';
 import React from 'react';
 
@@ -140,6 +146,42 @@ export default function Home() {
         </a>
       ),
       searchFields: ['name', 'type']
+    },
+    {
+      title: "Referans Pozları",
+      data: referencePoses,
+      component: (collection: ReferencePose) => (
+        <div key={collection.name} className="card">
+          <h3 className="card-title">{collection.name}</h3>
+          
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {collection.poses.map((pose, index) => (
+              <div key={index} className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <p className="font-medium">{pose.title}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  {pose.count}+ poz
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 space-y-3">
+            {collection.sets.map((set, index) => (
+              <a
+                key={index}
+                href={set.url}
+                className="flex items-center justify-between p-3 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>{set.name}</span>
+                <span className="text-primary">📥 İndir</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ),
+      searchFields: ['name', 'poses.title', 'sets.name']
     }
   ];
 

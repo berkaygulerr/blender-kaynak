@@ -1,3 +1,10 @@
+interface Shortcut {
+  name: string;
+  url: string;
+  category: string;
+  icon: string;
+}
+
 export function Shortcuts({ items }: { items: Shortcut[] }) {
   return (
     <section className="mb-16">

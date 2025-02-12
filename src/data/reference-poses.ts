@@ -1,60 +1,35 @@
-export interface ReferencePackage {
+export interface ReferencePose {
   name: string;
-  url: string;
   poses: {
+    title: string;
+    count: number;
+  }[];
+  sets: {
     name: string;
-    description: string;
-    imageCount: number;
-    category: string;
+    url: string;
   }[];
 }
 
-export const referencePoses: ReferencePackage[] = [
+export const referencePoses: ReferencePose[] = [
   {
-    name: "Referans Poz Seti 1",
-    url: "https://drive.google.com/drive/folders/1a8fO4UNFnaY34wwVZv20N5_uBXKCNwVw",
+    name: "Çizim & Güzel Sanatlar Referans Pozları",
     poses: [
+      { title: "Oturma Pozu Referansı", count: 720 },
+      { title: "Günlük Erkek Poz Referansı", count: 450 },
+      { title: "Erkek Hareket Poz Referansı", count: 310 },
+      { title: "Akademik Kadın Poz Referansı", count: 350 },
+      { title: "Kadın Poz Referansı", count: 350 },
+      { title: "Kadın Sanat Poz Referansı", count: 280 }
+    ],
+    sets: [
       {
-        name: "720+ Oturma Pozu Referansı",
-        description: "Çeşitli oturma pozisyonları",
-        imageCount: 720,
-        category: "oturma"
+        name: "Set 1 - Temel Koleksiyon",
+        url: "https://drive.google.com/drive/folders/1a8fO4UNFnaY34wwVZv20N5_uBXKCNwVw"
       },
       {
-        name: "450+ Günlük Erkek Poz Referansı",
-        description: "Günlük yaşamdan erkek pozları",
-        imageCount: 450,
-        category: "erkek"
-      },
-      {
-        name: "310+ Erkek Hareket Poz Referansı",
-        description: "Aksiyon ve hareket pozisyonları",
-        imageCount: 310,
-        category: "hareket"
-      },
-      {
-        name: "350+ Akademik Kadın Poz Referansı",
-        description: "Akademik çizimler için kadın pozları",
-        imageCount: 350,
-        category: "akademik"
-      },
-      {
-        name: "350+ Kadın Poz Referansı",
-        description: "Genel kadın pozisyonları",
-        imageCount: 350,
-        category: "kadın"
-      },
-      {
-        name: "280+ Kadın Sanat Poz Referansı",
-        description: "Sanatsal çizimler için kadın pozları",
-        imageCount: 280,
-        category: "sanat"
+        name: "Set 2 - İleri Seviye",
+        url: "https://drive.google.com/drive/folders/1jAX9ltMhqIXl1ANjYZTXeNFAsLLRoJx-"
       }
     ]
-  },
-  {
-    name: "Referans Poz Seti 2",
-    url: "https://drive.google.com/drive/folders/1jAX9ltMhqIXl1ANjYZTXeNFAsLLRoJx-",
-    poses: [] // Set 2 için detayları ekleyebilirsiniz
   }
 ]; 
